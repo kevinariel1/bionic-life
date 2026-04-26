@@ -7,6 +7,9 @@ export type Json =
   | Json[]
 
 export interface Database {
+  __InternalSupabase: {
+    PostgrestVersion: '12'
+  }
   public: {
     Tables: {
       profiles: {
