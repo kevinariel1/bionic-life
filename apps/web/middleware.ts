@@ -38,7 +38,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // Protect /admin — must be logged in AND have admin role
-  if (pathname.startsWith('/admin')) {
+  if (pathname.startsWith('/admin') && !pathname.startsWith('/admin-setup')) {
     if (!user) {
       return NextResponse.redirect(new URL('/auth/login', request.url))
     }
